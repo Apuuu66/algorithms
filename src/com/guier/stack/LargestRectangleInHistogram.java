@@ -12,39 +12,8 @@ public class LargestRectangleInHistogram {
         System.out.println(new LargestRectangleInHistogram().largestRectangleArea(heights));
     }
 
-    public int largestRectangleArea(int[] heights) {
-        if (heights.length == 0) {
-            return 0;
-        }
-        Stack<Integer> stack = new Stack<>();
-        int maxArea = Integer.MIN_VALUE;
-        for (int i = 0; i < heights.length; i++) {
-            while (!stack.isEmpty() && heights[stack.peek()] > heights[i]) {
-                int height = heights[stack.pop()];
-                int width;
-                if (stack.isEmpty()) {
-                    width = i;
-                } else {
-                    width = i - stack.peek() - 1;
-                }
-                maxArea = Math.max(maxArea, width * height);
-            }
-            stack.push(i);
-        }
-        while (!stack.isEmpty()) {
-            int height = heights[stack.pop()];
-            int width;
-            if (stack.isEmpty()) {
-                width = heights.length;
-            } else {
-                width = heights.length - stack.peek() - 1;
-            }
-            maxArea = Math.max(maxArea, width * height);
-        }
-        return maxArea;
-    }
 
-    public int largestRectangleArea1(int[] heights) {
+    public int largestRectangleArea(int[] heights) {
         int maxArea = 0;
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < heights.length; i++) {
