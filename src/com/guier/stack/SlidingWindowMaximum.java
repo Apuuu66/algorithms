@@ -24,16 +24,17 @@ public class SlidingWindowMaximum {
             // dq.removeLast();
             // dq.addLast(i);
             // dq.getFirst();
-            if (!dq.isEmpty() && dq.getFirst() < i - k + 1) {
+            if (!dq.isEmpty() && dq.getFirst() < i - k + 1) {//判断是否出界，小于窗口的起始位置即出界，需移除。
                 dq.removeFirst();
             }
-            while (!dq.isEmpty() && nums[dq.getLast()] < nums[i]) {
+            while (!dq.isEmpty() && nums[dq.getLast()] < nums[i]) {//滑动窗口中一直保持窗口区间内最大值，窗口中元素不一定总是3个。
                 dq.removeLast();
             }
             dq.addLast(i);
-            if (i >= k - 1) {
+            if (i >= k - 1) {//个数大于k的时候开始存对应窗口数值。
                 rtn[i - k + 1] = nums[dq.getFirst()];
             }
+            System.out.println(dq);
         }
         return rtn;
     }
