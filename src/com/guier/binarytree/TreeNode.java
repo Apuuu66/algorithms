@@ -1,7 +1,7 @@
 package com.guier.binarytree;
 
 public class TreeNode {
-    Integer value;
+    Integer val;
     TreeNode left;
     TreeNode right;
 
@@ -9,13 +9,13 @@ public class TreeNode {
     }
 
     public TreeNode(Integer value) {
-        this.value = value;
+        this.val = value;
     }
 
     @Override
     public String toString() {
         return "TreeNode{" +
-                "value=" + value +
+                "value=" + val +
                 '}';
     }
 }

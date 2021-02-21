@@ -51,7 +51,7 @@ public class FloorOrder {
 //                    queue.offer(null);
 //                }
                 if (!queue.isEmpty()) {
-                    System.out.println(queue.getLast().value);
+                    System.out.println(queue.getLast().val);
                     queue.offer(null);
                 }
 
@@ -73,7 +73,7 @@ public class FloorOrder {
         while (!queue.isEmpty()) {
             cur = queue.poll();
             if (cur != null) {
-                System.out.println(cur.value);
+                System.out.println(cur.val);
             }
             if (cur.left != null) {
                 queue.offer(cur.left);
@@ -93,7 +93,7 @@ public class FloorOrder {
         stack.push(root);
         while (!stack.empty()) {
             TreeNode node = stack.pop();
-            list.add(node.value);
+            list.add(node.val);
             if (node.right != null) {
                 stack.push(node.right);
             }
@@ -118,7 +118,7 @@ public class FloorOrder {
             }
             current = stack.peek();
             stack.pop();
-            list.add(current.value);
+            list.add(current.val);
             current = current.right;
 
         }
