@@ -11,3 +11,6 @@
 全排列 com.guier.dfs.Perm
 简易计算器 com.guier.other.Calculator
 - #### LeetCode
+类型|题号|题目|类|引用|
+|---|----|----|---|---|
+|滑动窗口|1838|最高频元素的频数|maxFrequency|null
